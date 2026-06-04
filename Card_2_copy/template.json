@@ -1,0 +1,35 @@
+{
+  "id": "ozlc9xls",
+  "name": "Default",
+  "width": 350,
+  "height": 490,
+  "backgroundColor": "hsl(220 18% 13%)",
+  "elements": [
+    {
+      "id": "7i9flxu1",
+      "type": "text",
+      "tag": "{{text}}",
+      "x": 20,
+      "y": 20,
+      "width": 200,
+      "height": 32,
+      "style": {
+        "fontSize": 14,
+        "color": "hsl(210 20% 92%)"
+      }
+    },
+    {
+      "id": "cy78cdph",
+      "type": "text",
+      "tag": "{{dsfdsf}}",
+      "x": 20,
+      "y": 60,
+      "width": 200,
+      "height": 32,
+      "style": {
+        "fontSize": 14,
+        "color": "hsl(210 20% 92%)"
+      }
+    }
+  ]
+}
