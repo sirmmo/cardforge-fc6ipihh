@@ -4,5 +4,5 @@
 
 _A [CardForge](https://card-creator.tcg-schema.org) project. Edit it in the app; this repo holds the source of truth (templates, data, images)._
 
-- Sheets: 1
-- Cards: 0
+- Sheets: 2
+- Cards: 2
