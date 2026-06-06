@@ -2,5 +2,9 @@
   {
     "text": "sad",
     "icon": "fa fa-star"
+  },
+  {
+    "icon": "fa fa-tree",
+    "text": "tree"
   }
 ]
