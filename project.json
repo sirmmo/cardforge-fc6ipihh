@@ -16,21 +16,26 @@
         "backgroundColor": "hsl(220 18% 13%)",
         "elements": [
           {
-            "id": "xnke45dz",
-            "type": "text",
-            "tag": "{{text}}",
-            "x": 75,
-            "y": 37.43426435085837,
-            "width": 200,
-            "height": 32,
+            "id": "mx2ruebz",
+            "type": "icon",
+            "tag": "{{icon}}",
+            "x": 30.5,
+            "y": 26.304251609442062,
+            "width": 289,
+            "height": 179,
             "style": {
-              "fontSize": 14,
+              "fontSize": 47,
               "color": "hsl(210 20% 92%)"
             }
           }
         ]
       },
-      "rows": []
+      "rows": [
+        {
+          "text": "sad",
+          "icon": "fa fa-star"
+        }
+      ]
     },
     {
       "id": "tp7jcipx",
