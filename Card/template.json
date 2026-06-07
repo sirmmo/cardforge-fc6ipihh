@@ -17,6 +17,20 @@
         "fontSize": 57,
         "color": "hsl(210 20% 92%)"
       }
+    },
+    {
+      "id": "7foqo45y",
+      "type": "image",
+      "tag": "{{image}}",
+      "x": 20,
+      "y": 60,
+      "width": 160,
+      "height": 200,
+      "style": {
+        "fontSize": 24,
+        "color": "hsl(210 20% 92%)",
+        "imageUrl": "images/7175bed495c714e8e1f0b1dd4b252be5479dabad.png"
+      }
     }
   ]
 }
