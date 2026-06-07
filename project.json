@@ -174,5 +174,13 @@
       },
       "rows": []
     }
-  ]
+  ],
+  "assets": {
+    "valle_Trebba_general.png": "assets/valle_Trebba_general.png",
+    "valle_Trebba_render.jpg": "assets/valle_Trebba_render.jpg",
+    "valle-trebba_2.png": "assets/valle-trebba_2.png",
+    "valle-trebba_3.png": "assets/valle-trebba_3.png",
+    "valle-trebba-5__1_.png": "assets/valle-trebba-5__1_.png",
+    "valle-trebba-5.png": "assets/valle-trebba-5.png"
+  }
 }
