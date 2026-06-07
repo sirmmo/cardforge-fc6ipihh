@@ -102,6 +102,10 @@
         {
           "text": "sdsafasd",
           "dsfdsf": "gdsgdgfg"
+        },
+        {
+          "text": "adadad",
+          "dsfdsf": "erererer"
         }
       ]
     },
@@ -197,5 +201,13 @@
     "valle-trebba_3.png": "assets/valle-trebba_3.png",
     "valle-trebba-5__1_.png": "assets/valle-trebba-5__1_.png",
     "valle-trebba-5.png": "assets/valle-trebba-5.png"
+  },
+  "back": {
+    "id": "xgobavnt",
+    "name": "Card Back",
+    "width": 350,
+    "height": 490,
+    "backgroundColor": "hsl(220 18% 13%)",
+    "elements": []
   }
 }
