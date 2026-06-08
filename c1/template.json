@@ -1,0 +1,22 @@
+{
+  "id": "itr9ybwu",
+  "name": "Default",
+  "width": 350,
+  "height": 490,
+  "backgroundColor": "hsl(220 18% 13%)",
+  "elements": [
+    {
+      "id": "mx2ruebz",
+      "type": "icon",
+      "tag": "{{icon}}",
+      "x": 30.5,
+      "y": 26.304251609442062,
+      "width": 289,
+      "height": 179,
+      "style": {
+        "fontSize": 57,
+        "color": "hsl(210 20% 92%)"
+      }
+    }
+  ]
+}
