@@ -13,10 +13,15 @@
   section { padding: 8px 28px 24px; }
   h2 { font-size: 13px; text-transform: uppercase; letter-spacing: .08em; color: #9aa3b2; }
   .grid { display: flex; flex-wrap: wrap; gap: 16px; }
-  figure.card { margin: 0; }
-  .scaler { overflow: hidden; border-radius: 10px; border: 1px solid #2a2f3a; background: #161a22; }
+  figure.card { margin: 0; cursor: zoom-in; }
+  figure.card:focus { outline: 2px solid #3b82f6; outline-offset: 2px; border-radius: 12px; }
+  .scaler { overflow: hidden; border-radius: 10px; border: 1px solid #2a2f3a; background: #161a22; transition: border-color .15s; }
+  figure.card:hover .scaler { border-color: #3b82f6; }
   figcaption { margin-top: 6px; font-size: 12px; color: #9aa3b2; max-width: 100%; }
   footer { padding: 24px 28px; color: #6b7280; font-size: 12px; }
+  #lightbox { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.85); z-index: 50; align-items: center; justify-content: center; cursor: zoom-out; padding: 16px; }
+  #lb-scaler { overflow: hidden; border-radius: 12px; box-shadow: 0 12px 48px rgba(0,0,0,.6); }
+  #lightbox-inner { transform-origin: top left; }
 </style></head>
 <body>
   <header>
@@ -24,52 +29,53 @@
     
   </header>
   <div class="toolbar"><input id="q" type="search" placeholder="Search cards…" autocomplete="off"></div>
-  <section><h2>Card</h2><div class="grid"><figure class="card" data-search="sad fa fa-star valle-trebba-5.png"><div class="scaler" style="width:210px;height:294px;"><div style="transform:scale(0.6);transform-origin:top left;"><div style="position:relative;width:350px;height:490px;background-color:hsl(220 18% 13%);overflow:hidden;">
+  <section><h2>Card</h2><div class="grid"><figure class="card" data-search="sad fa fa-star valle-trebba-5.png" data-w="350" data-h="490" tabindex="0"><div class="scaler" style="width:210px;height:294px;"><div class="fit" style="transform:scale(0.6);transform-origin:top left;"><div style="position:relative;width:350px;height:490px;background-color:hsl(220 18% 13%);overflow:hidden;">
     <div style="position:absolute;left:30.5px;top:26.304251609442062px;width:289px;height:179px;display:flex;align-items:center;justify-content:center;gap:2px;font-size:57px;color:hsl(210 20% 92%);"><i class="fa fa-star"></i></div>
-</div></div></div><figcaption>sad</figcaption></figure><figure class="card" data-search="sad fa fa-star valle-trebba-5.png"><div class="scaler" style="width:210px;height:294px;"><div style="transform:scale(0.6);transform-origin:top left;"><div style="position:relative;width:350px;height:490px;background-color:hsl(220 18% 13%);overflow:hidden;">
+</div></div></div><figcaption>sad</figcaption></figure><figure class="card" data-search="sad fa fa-star valle-trebba-5.png" data-w="350" data-h="490" tabindex="0"><div class="scaler" style="width:210px;height:294px;"><div class="fit" style="transform:scale(0.6);transform-origin:top left;"><div style="position:relative;width:350px;height:490px;background-color:hsl(220 18% 13%);overflow:hidden;">
     
 </div></div></div><figcaption>sad (back)</figcaption></figure>
-<figure class="card" data-search="fa fa-tree tree"><div class="scaler" style="width:210px;height:294px;"><div style="transform:scale(0.6);transform-origin:top left;"><div style="position:relative;width:350px;height:490px;background-color:hsl(220 18% 13%);overflow:hidden;">
+<figure class="card" data-search="fa fa-tree tree" data-w="350" data-h="490" tabindex="0"><div class="scaler" style="width:210px;height:294px;"><div class="fit" style="transform:scale(0.6);transform-origin:top left;"><div style="position:relative;width:350px;height:490px;background-color:hsl(220 18% 13%);overflow:hidden;">
     <div style="position:absolute;left:30.5px;top:26.304251609442062px;width:289px;height:179px;display:flex;align-items:center;justify-content:center;gap:2px;font-size:57px;color:hsl(210 20% 92%);"><i class="fa fa-tree"></i></div>
-</div></div></div><figcaption>fa fa-tree</figcaption></figure><figure class="card" data-search="fa fa-tree tree"><div class="scaler" style="width:210px;height:294px;"><div style="transform:scale(0.6);transform-origin:top left;"><div style="position:relative;width:350px;height:490px;background-color:hsl(220 18% 13%);overflow:hidden;">
+</div></div></div><figcaption>fa fa-tree</figcaption></figure><figure class="card" data-search="fa fa-tree tree" data-w="350" data-h="490" tabindex="0"><div class="scaler" style="width:210px;height:294px;"><div class="fit" style="transform:scale(0.6);transform-origin:top left;"><div style="position:relative;width:350px;height:490px;background-color:hsl(220 18% 13%);overflow:hidden;">
     
 </div></div></div><figcaption>fa fa-tree (back)</figcaption></figure></div></section>
-<section><h2>Card 2</h2><div class="grid"><figure class="card" data-search="dfdsfsdf gdsfsdfsd"><div class="scaler" style="width:210px;height:294px;"><div style="transform:scale(0.6);transform-origin:top left;"><div style="position:relative;width:350px;height:490px;background-color:hsl(220 18% 13%);overflow:hidden;">
+<section><h2>Card 2</h2><div class="grid"><figure class="card" data-search="dfdsfsdf gdsfsdfsd" data-w="350" data-h="490" tabindex="0"><div class="scaler" style="width:210px;height:294px;"><div class="fit" style="transform:scale(0.6);transform-origin:top left;"><div style="position:relative;width:350px;height:490px;background-color:hsl(220 18% 13%);overflow:hidden;">
     <div style="position:absolute;left:20px;top:20px;width:200px;height:32px;display:flex;align-items:center;justify-content:flex-start;font-size:14px;font-weight:normal;font-style:normal;text-align:left;color:hsl(210 20% 92%);overflow:hidden;">dfdsfsdf</div>
     <div style="position:absolute;left:20px;top:60px;width:200px;height:32px;display:flex;align-items:center;justify-content:flex-start;font-size:14px;font-weight:normal;font-style:normal;text-align:left;color:hsl(210 20% 92%);overflow:hidden;">gdsfsdfsd</div>
-</div></div></div><figcaption>dfdsfsdf</figcaption></figure><figure class="card" data-search="dfdsfsdf gdsfsdfsd"><div class="scaler" style="width:210px;height:294px;"><div style="transform:scale(0.6);transform-origin:top left;"><div style="position:relative;width:350px;height:490px;background-color:hsl(220 18% 13%);overflow:hidden;">
+</div></div></div><figcaption>dfdsfsdf</figcaption></figure><figure class="card" data-search="dfdsfsdf gdsfsdfsd" data-w="350" data-h="490" tabindex="0"><div class="scaler" style="width:210px;height:294px;"><div class="fit" style="transform:scale(0.6);transform-origin:top left;"><div style="position:relative;width:350px;height:490px;background-color:hsl(220 18% 13%);overflow:hidden;">
     
 </div></div></div><figcaption>dfdsfsdf (back)</figcaption></figure>
-<figure class="card" data-search="sdsafasd gdsgdgfg"><div class="scaler" style="width:210px;height:294px;"><div style="transform:scale(0.6);transform-origin:top left;"><div style="position:relative;width:350px;height:490px;background-color:hsl(220 18% 13%);overflow:hidden;">
+<figure class="card" data-search="sdsafasd gdsgdgfg" data-w="350" data-h="490" tabindex="0"><div class="scaler" style="width:210px;height:294px;"><div class="fit" style="transform:scale(0.6);transform-origin:top left;"><div style="position:relative;width:350px;height:490px;background-color:hsl(220 18% 13%);overflow:hidden;">
     <div style="position:absolute;left:20px;top:20px;width:200px;height:32px;display:flex;align-items:center;justify-content:flex-start;font-size:14px;font-weight:normal;font-style:normal;text-align:left;color:hsl(210 20% 92%);overflow:hidden;">sdsafasd</div>
     <div style="position:absolute;left:20px;top:60px;width:200px;height:32px;display:flex;align-items:center;justify-content:flex-start;font-size:14px;font-weight:normal;font-style:normal;text-align:left;color:hsl(210 20% 92%);overflow:hidden;">gdsgdgfg</div>
-</div></div></div><figcaption>sdsafasd</figcaption></figure><figure class="card" data-search="sdsafasd gdsgdgfg"><div class="scaler" style="width:210px;height:294px;"><div style="transform:scale(0.6);transform-origin:top left;"><div style="position:relative;width:350px;height:490px;background-color:hsl(220 18% 13%);overflow:hidden;">
+</div></div></div><figcaption>sdsafasd</figcaption></figure><figure class="card" data-search="sdsafasd gdsgdgfg" data-w="350" data-h="490" tabindex="0"><div class="scaler" style="width:210px;height:294px;"><div class="fit" style="transform:scale(0.6);transform-origin:top left;"><div style="position:relative;width:350px;height:490px;background-color:hsl(220 18% 13%);overflow:hidden;">
     
 </div></div></div><figcaption>sdsafasd (back)</figcaption></figure>
-<figure class="card" data-search="adadad erererer"><div class="scaler" style="width:210px;height:294px;"><div style="transform:scale(0.6);transform-origin:top left;"><div style="position:relative;width:350px;height:490px;background-color:hsl(220 18% 13%);overflow:hidden;">
+<figure class="card" data-search="adadad erererer" data-w="350" data-h="490" tabindex="0"><div class="scaler" style="width:210px;height:294px;"><div class="fit" style="transform:scale(0.6);transform-origin:top left;"><div style="position:relative;width:350px;height:490px;background-color:hsl(220 18% 13%);overflow:hidden;">
     <div style="position:absolute;left:20px;top:20px;width:200px;height:32px;display:flex;align-items:center;justify-content:flex-start;font-size:14px;font-weight:normal;font-style:normal;text-align:left;color:hsl(210 20% 92%);overflow:hidden;">adadad</div>
     <div style="position:absolute;left:20px;top:60px;width:200px;height:32px;display:flex;align-items:center;justify-content:flex-start;font-size:14px;font-weight:normal;font-style:normal;text-align:left;color:hsl(210 20% 92%);overflow:hidden;">erererer</div>
-</div></div></div><figcaption>adadad</figcaption></figure><figure class="card" data-search="adadad erererer"><div class="scaler" style="width:210px;height:294px;"><div style="transform:scale(0.6);transform-origin:top left;"><div style="position:relative;width:350px;height:490px;background-color:hsl(220 18% 13%);overflow:hidden;">
+</div></div></div><figcaption>adadad</figcaption></figure><figure class="card" data-search="adadad erererer" data-w="350" data-h="490" tabindex="0"><div class="scaler" style="width:210px;height:294px;"><div class="fit" style="transform:scale(0.6);transform-origin:top left;"><div style="position:relative;width:350px;height:490px;background-color:hsl(220 18% 13%);overflow:hidden;">
     
 </div></div></div><figcaption>adadad (back)</figcaption></figure></div></section>
-<section><h2>Card 2 copy</h2><div class="grid"><figure class="card" data-search="dfdsfsdfasdasdasd gdsfsdfsdasdgasdf"><div class="scaler" style="width:210px;height:294px;"><div style="transform:scale(0.6);transform-origin:top left;"><div style="position:relative;width:350px;height:490px;background-color:hsl(220 18% 13%);overflow:hidden;">
+<section><h2>Card 2 copy</h2><div class="grid"><figure class="card" data-search="dfdsfsdfasdasdasd gdsfsdfsdasdgasdf" data-w="350" data-h="490" tabindex="0"><div class="scaler" style="width:210px;height:294px;"><div class="fit" style="transform:scale(0.6);transform-origin:top left;"><div style="position:relative;width:350px;height:490px;background-color:hsl(220 18% 13%);overflow:hidden;">
     <div style="position:absolute;left:20px;top:20px;width:200px;height:32px;display:flex;align-items:center;justify-content:flex-start;font-size:14px;font-weight:normal;font-style:normal;text-align:left;color:hsl(210 20% 92%);overflow:hidden;">dfdsfsdfasdasdasd</div>
     <div style="position:absolute;left:20px;top:60px;width:200px;height:32px;display:flex;align-items:center;justify-content:flex-start;font-size:14px;font-weight:normal;font-style:normal;text-align:left;color:hsl(210 20% 92%);overflow:hidden;">gdsfsdfsdasdgasdf</div>
-</div></div></div><figcaption>dfdsfsdfasdasdasd</figcaption></figure><figure class="card" data-search="dfdsfsdfasdasdasd gdsfsdfsdasdgasdf"><div class="scaler" style="width:210px;height:294px;"><div style="transform:scale(0.6);transform-origin:top left;"><div style="position:relative;width:350px;height:490px;background-color:hsl(220 18% 13%);overflow:hidden;">
+</div></div></div><figcaption>dfdsfsdfasdasdasd</figcaption></figure><figure class="card" data-search="dfdsfsdfasdasdasd gdsfsdfsdasdgasdf" data-w="350" data-h="490" tabindex="0"><div class="scaler" style="width:210px;height:294px;"><div class="fit" style="transform:scale(0.6);transform-origin:top left;"><div style="position:relative;width:350px;height:490px;background-color:hsl(220 18% 13%);overflow:hidden;">
     <img src="{{image}}" style="position:absolute;left:20px;top:20px;width:311px;height:462px;object-fit:cover;" />
 </div></div></div><figcaption>dfdsfsdfasdasdasd (back)</figcaption></figure>
-<figure class="card" data-search="sdsafasdsdgasdfasdf gdsgdgfgsadgasdfasdf"><div class="scaler" style="width:210px;height:294px;"><div style="transform:scale(0.6);transform-origin:top left;"><div style="position:relative;width:350px;height:490px;background-color:hsl(220 18% 13%);overflow:hidden;">
+<figure class="card" data-search="sdsafasdsdgasdfasdf gdsgdgfgsadgasdfasdf" data-w="350" data-h="490" tabindex="0"><div class="scaler" style="width:210px;height:294px;"><div class="fit" style="transform:scale(0.6);transform-origin:top left;"><div style="position:relative;width:350px;height:490px;background-color:hsl(220 18% 13%);overflow:hidden;">
     <div style="position:absolute;left:20px;top:20px;width:200px;height:32px;display:flex;align-items:center;justify-content:flex-start;font-size:14px;font-weight:normal;font-style:normal;text-align:left;color:hsl(210 20% 92%);overflow:hidden;">sdsafasdsdgasdfasdf</div>
     <div style="position:absolute;left:20px;top:60px;width:200px;height:32px;display:flex;align-items:center;justify-content:flex-start;font-size:14px;font-weight:normal;font-style:normal;text-align:left;color:hsl(210 20% 92%);overflow:hidden;">gdsgdgfgsadgasdfasdf</div>
-</div></div></div><figcaption>sdsafasdsdgasdfasdf</figcaption></figure><figure class="card" data-search="sdsafasdsdgasdfasdf gdsgdgfgsadgasdfasdf"><div class="scaler" style="width:210px;height:294px;"><div style="transform:scale(0.6);transform-origin:top left;"><div style="position:relative;width:350px;height:490px;background-color:hsl(220 18% 13%);overflow:hidden;">
+</div></div></div><figcaption>sdsafasdsdgasdfasdf</figcaption></figure><figure class="card" data-search="sdsafasdsdgasdfasdf gdsgdgfgsadgasdfasdf" data-w="350" data-h="490" tabindex="0"><div class="scaler" style="width:210px;height:294px;"><div class="fit" style="transform:scale(0.6);transform-origin:top left;"><div style="position:relative;width:350px;height:490px;background-color:hsl(220 18% 13%);overflow:hidden;">
     <img src="{{image}}" style="position:absolute;left:20px;top:20px;width:311px;height:462px;object-fit:cover;" />
 </div></div></div><figcaption>sdsafasdsdgasdfasdf (back)</figcaption></figure></div></section>
-<section><h2>Card 4</h2><div class="grid"><figure class="card" data-search=""><div class="scaler" style="width:210px;height:294px;"><div style="transform:scale(0.6);transform-origin:top left;"><div style="position:relative;width:350px;height:490px;background-color:hsl(220 18% 13%);overflow:hidden;">
+<section><h2>Card 4</h2><div class="grid"><figure class="card" data-search="" data-w="350" data-h="490" tabindex="0"><div class="scaler" style="width:210px;height:294px;"><div class="fit" style="transform:scale(0.6);transform-origin:top left;"><div style="position:relative;width:350px;height:490px;background-color:hsl(220 18% 13%);overflow:hidden;">
     
-</div></div></div><figcaption>Card 1</figcaption></figure><figure class="card" data-search=""><div class="scaler" style="width:210px;height:294px;"><div style="transform:scale(0.6);transform-origin:top left;"><div style="position:relative;width:350px;height:490px;background-color:hsl(220 18% 13%);overflow:hidden;">
+</div></div></div><figcaption>Card 1</figcaption></figure><figure class="card" data-search="" data-w="350" data-h="490" tabindex="0"><div class="scaler" style="width:210px;height:294px;"><div class="fit" style="transform:scale(0.6);transform-origin:top left;"><div style="position:relative;width:350px;height:490px;background-color:hsl(220 18% 13%);overflow:hidden;">
     
 </div></div></div><figcaption>Card 1 (back)</figcaption></figure></div></section>
   <footer>Generated by CardForge.</footer>
+  <div id="lightbox"><div id="lb-scaler"><div id="lightbox-inner"></div></div></div>
   <script>
     var q = document.getElementById('q');
     q && q.addEventListener('input', function () {
@@ -78,5 +84,21 @@
         c.style.display = (!v || (c.dataset.search || '').indexOf(v) !== -1) ? '' : 'none';
       });
     });
+    var lb = document.getElementById('lightbox'), lbs = document.getElementById('lb-scaler'), lbi = document.getElementById('lightbox-inner');
+    function closeLb() { lb.style.display = 'none'; lbi.innerHTML = ''; }
+    function openLb(fig) {
+      var w = +fig.dataset.w, h = +fig.dataset.h;
+      var fit = Math.min((window.innerWidth * 0.92) / w, (window.innerHeight * 0.92) / h);
+      lbi.innerHTML = fig.querySelector('.fit').innerHTML;
+      lbi.style.width = w + 'px'; lbi.style.height = h + 'px'; lbi.style.transform = 'scale(' + fit + ')';
+      lbs.style.width = (w * fit) + 'px'; lbs.style.height = (h * fit) + 'px';
+      lb.style.display = 'flex';
+    }
+    document.querySelectorAll('figure.card').forEach(function (fig) {
+      fig.addEventListener('click', function () { openLb(fig); });
+      fig.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openLb(fig); } });
+    });
+    lb.addEventListener('click', closeLb);
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeLb(); });
   </script>
 </body></html>
